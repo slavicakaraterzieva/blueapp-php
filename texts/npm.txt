@@ -1,0 +1,7 @@
+"listen:sass": "node-sass sass/main.scss css/style.css -w",
+    "server": "live-server --browser=firefox",
+    "init": "npm-run-all --parallel server listen:sass",
+    "compiled:sass": "node-sass sass/main.scss css/style.compiled.css",
+    "concatenated:css": "concat -o css/style.concatenated.css vendors/font-awesome-4.7.0/css/font-awesome.css css/style.compiled.css",
+    "compressed:css": "node-sass css/style.concatenated.css css/style.css --output-style compressed",
+    "final-build:css": "npm-run-all compiled:sass  concatenated:css compressed:css"
