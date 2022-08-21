@@ -34,7 +34,7 @@ include (ROOT_PATH."/inc/head.php");
 
     <!-- email input -->
 <input type="email" class="register__form__input email" placeholder="Email" id="email" name="email" required>
-<label for="email" class="register__form_label password_label" ><i class="fa fa-envelope"></i>Choose Email</label>
+<label for="email" class="register__form_label email_label" ><i class="fa fa-envelope"></i>Choose Email</label>
 <div class="email_error register__form_label" style="width:20rem; margin-top:-1rem; font-size:1rem; padding-bottom:0.5rem; color:#f56b26;"></div>
      <!-- end of email input -->
 

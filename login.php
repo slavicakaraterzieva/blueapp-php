@@ -13,7 +13,7 @@ include (ROOT_PATH."/inc/head.php");
 
    <div class="login__form">
 <!-- action ="php/login-user.php" -->
-<form method="POST" > <!--defining action = "/php/register.php" saves emty rows in database--> 
+<form method="POST" > <!--defining action = "/php/register.php" saves empty rows in database--> 
 <?php if(isset($_GET['error'])){?>
 <p class="error"><?php echo($_GET['error']);
 }?></p>

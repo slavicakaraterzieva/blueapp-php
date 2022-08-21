@@ -20,7 +20,7 @@ $email= filter_var(($_POST['login_email']), FILTER_SANITIZE_EMAIL);
 $password= ($_POST['login_password']);
  
 $exists = $user->findUserByEmail($email);
-//verifyemail
+//verify email
 if($exists){
   $db_email=$exists->user_email;
   $db_password=$exists->user_password;
@@ -30,7 +30,7 @@ if($exists){
  //print_r($db_password);
 
 if($db_role==="admin"){
-   //password veryfy
+   //password verify
   if(password_verify($password, $db_password)){
     $login = $user->verifyUser($email, $db_password);
 
@@ -38,14 +38,14 @@ if($db_role==="admin"){
        $logedInUser=createUserSession($login);
        echo json_encode(['msgcode' => 'success', 'msg'=>'redirect admin']);
        }
-       else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter corect password admin']);}//not working
+       else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter correct password admin']);}//not working
 
    }//end of password verify it works
-  else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter corect password admin']);}//else of password verify works
+  else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter correct password admin']);}//else of password verify works
 
 }//end of admin
 else{
-//password veryfy
+//password verify
    if(password_verify($password, $db_password)){
     $login = $user->verifyUser($email, $db_password);
 
@@ -53,19 +53,19 @@ else{
        $logedInUser=createUserSession($login);
        echo json_encode(['msgcode' => 'success', 'msg'=>'../../flexapp/index.php']);
        }
-        else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter corect password']);}//not working
+        else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter correct password']);}//not working
 
    }//end of password verify it works
-  else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter corect password']);}
+  else{echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter correct password']);}
 //else of password verify works
 
  }//else of admin
 
 } //end of if exists 
 else{
-echo json_encode(['msgcode' => 'no_email', 'msg' => 'enter corect email']);
+echo json_encode(['msgcode' => 'no_email', 'msg' => 'enter correct email']);
 
-    //echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter corect password']);
+    //echo json_encode(['msgcodepass' => 'no_pass', 'msgpass' => 'enter correct password']);
 }//else for exists
 
 //end of findUserByEmail
@@ -94,13 +94,13 @@ else {
 
 //json encoding for email
 /*   $exists = $user->findUserByEmail($email);
-//verifyemail
+//verify email
  if($exists){
 //findUser by email encoding for email
  echo json_encode(['msgcode' => 'is_email', 'msg' => 'email is ' .$email]);
 } 
 else{
-echo json_encode(['msgcode' => 'no_email', 'msg' => 'enter corect email']);
-}  */ //json encoding for email works, dont tuch it!
+echo json_encode(['msgcode' => 'no_email', 'msg' => 'enter correct email']);
+}  */ //json encoding for email works, don't touch it!
 
 ?>
