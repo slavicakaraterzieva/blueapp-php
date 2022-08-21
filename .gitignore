@@ -12,5 +12,5 @@
 *.vsix
 
 /blueapp.sql
-/config
+/config/config.php
 /texts
