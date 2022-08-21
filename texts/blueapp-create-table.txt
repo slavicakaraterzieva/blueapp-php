@@ -61,9 +61,9 @@ CREATE TABLE `payment_records` (
   `payment_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `post_price` int(11) NOT NULL,
-  `post_calculated_price` int(11) NOT NULL,
-  `date_paid` date NOT NULL DEFAULT current_timestamp(),
+  `post_price` varchar(64) NOT NULL,
+  `post_calculated_price` varchar(64) NOT NULL,
+  `date_paid` date NOT NULL,
   `post_start_date` date NOT NULL,
   `post_end_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
