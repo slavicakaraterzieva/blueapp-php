@@ -10,8 +10,9 @@
     <!-- header -->
     <header class="header">
         <div class="header_title-box">
-<?php if (isset($_SESSION['user_name'])){
-echo $_SESSION['user_name'];}?>
+<?php if (isset($_SESSION['user_name'])):?>
+<p style="font-size:1.8rem;"> <?php echo $_SESSION['user_name'];endif?> </p>
+
          <h1 class="primary-heading">
             <span class="primary-heading--front">
                 <p class="primary-heading--sub">The</p>

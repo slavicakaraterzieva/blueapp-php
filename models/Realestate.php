@@ -50,7 +50,7 @@ return $row;
 
 }//end of all payment records
 
-// functionpostCalculatedPrice
+// function postCalculatedPrice
 public function postCalculatedPrice(){
 
   $this->db->query('UPDATE `payment_records`SET `post_calculated_price`=SUBSTRING(`post_price`,-1) WHERE `post_calculated_price`=0');
@@ -68,6 +68,14 @@ public function postCalculatedPrice(){
     $this->db->bind(':post_end_date', $date_expired_free);
     $row =$this->db->execute();
     return $row;  
+ }
+
+ //get realestate function
+ public function getRealEstatePost($post_id){
+  $this->db->query('SELECT * FROM posts WHERE post_id=:post_id');
+  $this->db->bind(':post_id', $post_id);
+  $row=$this->db->resultSet(); 
+  return $row;
  }
 
  }//end of class Realestate
