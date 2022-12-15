@@ -10,8 +10,9 @@
     <!-- header -->
     <header class="header">
         <div class="header_title-box">
-<?php if (isset($_SESSION['user_name'])){
-echo $_SESSION['user_name'];}?>
+<?php if (isset($_SESSION['user_name'])):?>
+<p style="font-size:1.8rem;"> <?php echo $_SESSION['user_name'];endif?> </p>
+
          <h1 class="primary-heading">
             <span class="primary-heading--front">
                 <p class="primary-heading--sub">The</p>
@@ -43,9 +44,9 @@ echo $_SESSION['user_name'];}?>
                 <a href="#">What we offer</a>
             
                 <ul>
-                    <li><a href="offer.html">Our offer</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="post.html">Post free</a></li>
+                    <li><a href="../../blueapp/template_cards.php">Our offer</a></li>
+                    <li><a href="../../blueapp/inc/price-cards.php">Packages</a></li>
+                    <li><a href="../flexapp/create-add.php">Post free</a></li>
                 </ul>
             </li>
 
@@ -53,13 +54,14 @@ echo $_SESSION['user_name'];}?>
                 <a href="#">About us</a>
                 <ul>
                     <li>
-                        <a href="about.html">History</a></li>
+                        <a href="https://www.linkedin.com/in/slavica-karaterzieva-51644792/">History</a></li>
                 </ul>
             </li>
               
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="#">Contact us</a></li>
+
 <?php if(isset($_SESSION['user_id'])){
- echo '<li><a href="login.php">Logout</a></li>';
+ echo '<li><a href="../../blueapp/php/logout.php">Logout</a></li>';
 }
 else{echo'<li><a href="login.php">Login</a></li>';}
 ?>

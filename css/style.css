@@ -251,14 +251,15 @@ body {
   margin: 0 auto;
   width: 100%;
   height: auto;
-  margin-right: -1rem;
+  margin-right: -2rem;
   margin-top: -2rem; } 
   @media (max-width: 37.5em) {
     .advertisement-svg-icon {
       height: 80%;
       margin-top: -3rem; } }
   .advertisement-svg-icon span {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    font-weight: 600;
     color: #616060;
     margin-left: -1rem;
     margin-right: 1rem; }
@@ -290,14 +291,14 @@ body {
 
 .advertisement-address {
   position: absolute;
-  margin-left: 20%;
-  top: 90%;
+  margin-left: 0 auto;
+  top: 88%;
   padding-top: 1rem;
   color: #616060;
   font-size: 1rem; }
   .advertisement-address svg {
-    height: 2rem;
-    width: 2rem; }
+    height: 1rem;
+    width: 1rem; }
 
 .advertisement-description {
   position: absolute;
@@ -365,6 +366,10 @@ body {
       border-bottom: 1px solid #3c664d; }
     .advertisement-details ul li:last-child {
       border-bottom: none; }
+      @media (max-width: 31.25em) {
+        .advertisement-details ul {
+          font-size: 1.3rem;
+        margin-top:-2rem} }
 
 .advertisement_cta {
   position: absolute;
@@ -378,13 +383,18 @@ body {
   font-size: 1.8rem;
   float: left;
   margin-left: 1rem; }
-
+  
 .advertisement .btn-text {
   font-size: 1.3rem;
   float: right;
   margin-right: 1rem;
-  margin-top: 0.5rem;
-  color: #f56b26; }
+  margin-top: 20%;
+  color: #ba265d;
+  cursor: pointer;
+ }
+ @media (max-width: 31.25em) {
+  .advertisement .btn-text {
+    margin-top: 25%; } }
 
 .advertisement_bottom-logo-estate {
   position: absolute;

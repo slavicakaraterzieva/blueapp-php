@@ -3,11 +3,25 @@
         <div class="col-md-3 col-sm-1 col-sm-6 col-6 col-auto advertisement" id="advertisement"> 
           <div class="advertisement-side advertisement-side--front">
             <div class="advertisement_picture">
-                <img src="img/bannon-morrissy-house.jpg" alt="house">
+                <?php 
+                $post_featured_img=trim($p->post_featured_img);
+                //print_r($post_featured_img);
+                //echo $image_num= $img->getPostImages($post_featured_img);
+                $post_featured_pieces=$img->getAllImages($post_featured_img);
+                
+                ?> 
+                <?php
+                if($post_featured_img == ""):?>
+                 <img src="../../flexapp/img/posts/bannon-morrissy-house.jpg" alt="house">
+                
+                <?php else:?>
+                <img src="../../flexapp/img/posts/<?php echo $post_featured_pieces[0]?>" alt="house">
+                   
+                <?php endif?>
             </div>
             <h4 class="advertisement_heading">
                 <span class="advertisement-heading-span advertisement-heading-span--1">
-                    Wood house for sale on Kozuv mountain</span>
+                    <?php if(isset($p->post_title)){echo "$p->post_title";}?></span>
             </h4> 
 
             <div class="advertisement-specific-details">
@@ -15,12 +29,12 @@
                     <svg>
                         <use xlink:href="svg/symbol-defs.svg#icon-home_filled"></use>
                     </svg>
-                    <span>House</span>
+                    <span> <?php if (isset($getRealEstate->post_property_type)) {echo $getRealEstate->post_property_type ;}?></span>
 
                     <svg>
                         <use xlink:href="svg/symbol-defs.svg#icon-hotel"></use>
                     </svg>
-                    <span>Bed</span>
+                    <span><?php if (isset($getRealEstate->bedroom)) {echo $getRealEstate->bedroom ;}?></span>
 
                     <svg>
                         <use xlink:href="svg/symbol-defs.svg#icon-connection"></use>
@@ -32,22 +46,19 @@
     <svg>
         <use xlink:href="svg/symbol-defs.svg#icon-map"></use>
     </svg>
-    <span>st Dimitar Vlahov 30</span>
+    <span><?php if(isset($p->full_address)){echo "$p->full_address";} ?></span>
 </div>
 <!-- end of address -->
             </div>
             <!-- end of specific details -->
 
          <div class="advertisement-description">
-             <p>The description: Mountain log house.
-                  The number of rooms 3 + sauna Living area 64 sq.m. 
-                  Total area 101 sq.m. The ground floor area 61 sq.m. 
-                  The first floor area 40sq.m.</p>
+             <p><?php if(isset($p->post_content)){echo "$p->post_content";}?></p>
          
          <!-- end of description-->
          <div class="advertisement-type">
             
-             <p id="price"><span>$</span>480,300</p>
+             <p id="price"><span>$</span><?php if(isset($p->content_price)){echo "$p->content_price";}?></p>
          </div>
          <!-- end of type -->
         </div>
@@ -57,19 +68,23 @@
 <!--back side-->
 <div class="advertisement-side advertisement-side--back advertisement-side--back-1" >
     <div class="advertisement-company advertisement-individual">
-<img class="advertisement-company--logo" src="img/me.jpg" alt="person">
+<img class="advertisement-company--logo" src="../../flexapp/img/users/<?php if(isset($getOwner->user_image)){echo $getOwner->user_image;}?>" alt="person">
 
 <div class="advertisement-company-details">
     <div class="advertisement-company-name">
-        <span class="comp-individual-details">Company</span> Futurespect
+        <span class="comp-individual-details">Company</span> <?php if(isset($getOwner->user_work)){echo "$getOwner->user_work";}?>
     </div>
 
     <div class="advertisement-company-date-posted">
-        <span class="comp-individual-details">Date</span> 17 12 2030
+        <span class="comp-individual-details">Date</span> <?php if(isset($p->created_at)){echo "$p->created_at";}?>
     </div>
 
     <div class="advertisement-company-author-name">
-        <span class="comp-individual-details">Author</span> Slavica Karaterzieva
+        <span class="comp-individual-details">Author</span> <?php if( ($getOwner->user_first_name !="" )&&($getOwner->user_last_name !="") ){
+            echo $getOwner->user_first_name ." ". $getOwner->user_last_name;
+        }
+        else{ echo $getOwner->user_name;}
+        ?>
     </div>
 
 </div><!--end of details-->
@@ -77,22 +92,22 @@
 
     <div class="advertisement-details">
         <ul>
-            <li>First Feature</li>
-            <li>Second Feature</li>
-            <li>Third Feature</li>
+            <li>Floors <?php if (isset($getRealEstate->floor)) {echo $getRealEstate->floor ;}?></li>
+            <li>Bathroom <?php if (isset($getRealEstate->bath)) {echo $getRealEstate->bath ;}?> and Toilet <?php if (isset($getRealEstate->wc)) {echo $getRealEstate->wc ;}?></li>
+            <li>Outdoor Features <?php if (isset($getRealEstate->outdoor_features)) {echo $getRealEstate->outdoor_features ;}?></li>
         </ul>
     </div><!--end of feature-->
 
 <div class="advertisement_cta">
     <div class="advertisement_prise-picture-box">
-        <a href="#" class="advertisement_link btn-text">Read More</a>
-        <p class="advertisement_price-value">$480,300</p>
+        <a href="../../postapp/index.php?pid=<?php if(isset($p->post_id)){echo $p->post_id;}?>" class="advertisement_link btn-text">Read More</a>
+        <p class="advertisement_price-value"><?php if(isset($p->content_price)){echo "$p->content_price";}?></p>
     </div>
 </div><!--end of cta-->
 
 <div class="advertisement_bottom-logo advertisement_bottom-logo-estate">
     <div class="advertisement_bottom-logo-photo">
-  <img src="img/real estate.png" alt="company logo">
+  <!-- <img src="img/real estate.png" alt="company logo"> -->
     </div>
 </div><!--end of bottom logo-->
 

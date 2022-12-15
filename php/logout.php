@@ -16,7 +16,7 @@ function logout(){
     unset($_SESSION['user_name']);
     unset($_SESSION['user_role']);
     session_destroy();
-  /*   redirect('index.php');  */
+     redirect('index.php');  
 }
 
 logout();

@@ -39,7 +39,7 @@ public function getPostDate($created_at){
 
 
 //function getUnpaidPosts
-public function getUnpaidPosts($user_id,$post_status,$post_type){
+public function getAllRealEstatePosts($user_id,$post_status,$post_type){
     $this->db->query('SELECT * FROM posts WHERE user_id = :user_id AND post_status = :post_status AND post_type <>:post_type
      ORDER BY post_id DESC');
     $this->db->bind(':user_id', $user_id);
@@ -68,6 +68,29 @@ public function getPostByUserPayment($post_id){
     return $row;  
 }
 //end of getPostByUserPayment
+
+//get free posts
+public function getFreePosts($post_type){
+    $this->db->query('SELECT * FROM posts WHERE  post_type =:post_type
+     ORDER BY post_id DESC');
+   
+    $this->db->bind(':post_type', $post_type);
+    $result =$this->db->resultSet();
+    return $result;  
+}
+//end of get free posts
+
+//function getPaidPosts
+public function getPaidPosts($post_status,$post_type){
+    $this->db->query('SELECT * FROM posts WHERE post_status = :post_status AND post_type <>:post_type
+     ORDER BY post_id DESC');
+    
+    $this->db->bind(':post_status', $post_status);
+    $this->db->bind(':post_type', $post_type);
+    $result =$this->db->resultSet();
+    return $result;  
+}
+//end of getPaidPosts
 
 //postData
 /* function postData($user_id){

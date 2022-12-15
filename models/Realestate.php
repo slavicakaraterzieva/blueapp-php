@@ -1,7 +1,7 @@
 <?php
 class Realestate{
     private $db;
-
+    
 public function __construct(){
 $this ->db = new Database();}//end of construct
 
@@ -27,6 +27,30 @@ return false;
   }
 }//end of insertRealEstateAd
 
+//additional information for estate ad insert into estate table
+ public function insertRealEstate($posts_id,$post_property_type,$floor,$lounge,$kitchen,$bedroom,$bath,$wc,$parking,$sale_type){
+  $this->db->query('INSERT INTO estate(posts_id, post_property_type, floor, lounge, kitchen, bedroom, bath, wc, parking, sale_type) 
+  VALUES(:posts_id, :post_property_type, :floor, :lounge, :kitchen, :bedroom, :bath, :wc, :parking, :sale_type)');
+//bind params
+$this->db->bind(':posts_id',$posts_id);
+$this->db->bind(':post_property_type',$post_property_type);
+$this->db->bind(':floor',$floor);
+$this->db->bind(':lounge',$lounge);
+$this->db->bind(':kitchen',$kitchen);
+$this->db->bind(':bedroom',$bedroom);
+$this->db->bind(':bath',$bath);
+$this->db->bind(':wc',$wc);
+$this->db->bind(':parking',$parking);
+$this->db->bind(':sale_type',$sale_type);
+if($this->db->execute()){
+return true;
+}
+else{
+return false;
+}
+}
+//end of insert real estate additional info
+
 
 //insertPaymentRecords
 public function insertPaymentRecords(){
@@ -50,7 +74,7 @@ return $row;
 
 }//end of all payment records
 
-// functionpostCalculatedPrice
+// function postCalculatedPrice
 public function postCalculatedPrice(){
 
   $this->db->query('UPDATE `payment_records`SET `post_calculated_price`=SUBSTRING(`post_price`,-1) WHERE `post_calculated_price`=0');
@@ -69,6 +93,32 @@ public function postCalculatedPrice(){
     $row =$this->db->execute();
     return $row;  
  }
+
+ //get realestate function
+  public function getRealEstatePost($post_id){
+  $this->db->query('SELECT * FROM posts, estate WHERE posts.post_id=:post_id AND estate.post_id=:posts_id');
+  $this->db->bind(':post_id', $post_id);
+  $this->db->bind(":posts_id", $post_id);
+  $row=$this->db->single(); 
+  return $row;
+ } 
+
+
+
+ public function getRealEstate($post_id){
+  $this->db->query('SELECT * FROM estate WHERE post_id=:posts_id');
+  $this->db->bind(":posts_id", $post_id);
+  //$this->db->bind(":posts_id", $post_id);
+  $row=$this->db->resultSet();
+  return $row;
+  }
+
+//the original, it works
+/*   public function getRealEstatePost($post_id){
+    $this->db->query('SELECT * FROM posts WHERE post_id=:post_id');
+    $this->db->bind(':post_id', $post_id);
+    $row=$this->db->resultSet(); 
+    return $row;  } */
 
  }//end of class Realestate
 

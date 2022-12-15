@@ -23,6 +23,7 @@ if(isset($_POST['submit_realestate_post'])){
     echo $post_type = $_POST['post_type'];
     echo $setPrice = $_POST["post_type"];
     echo $post_status = "unpaid";
+   
 
     $allImages = "";
     foreach($_FILES['file']['name'] as $key=>$value){
