@@ -7,19 +7,19 @@ require_once ('./models/Img.php');
 require_once ('./models/Category.php');
 require_once ('./models/User.php');
 require_once ('./models/Realestate.php');
+require_once ('./models/Job.php');
 $post = new Post();
 $img = new Img();
 $user = new User();
 $cat= new Category();
 $real = new Realestate();
+$job = new Job();
 $post_type="free 0";
 $post_status="paid";
-
 $posts=$post->getFreePosts($post_type);
 $paid_posts =$post->getPaidPosts($post_status,$post_type);
-
 //print_r($paid_posts);
-// print_r($posts);
+//print_r($posts);
 ?>
 
 
@@ -31,10 +31,11 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
         <!-- the featured listing heading -->
       
 
-        <?php if($paid_posts == 0 && $posts == 0){
+        <?php if(!$paid_posts && !$posts){
             echo" <div class='col-md-12'>
             <h2 class='secondary-heading text-center'>You have no Advertisements Yet</h2>
         </div>";
+        include("template_cards.php");
         }
         else{
             echo"  <div class='col-md-12'>
@@ -57,10 +58,11 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
        $original_cat_name=$cat_name;
        $cat_name="other";
     }
-
+    
     switch($cat_name){
         case "realestate";
-       $getRealEstate=$real->getRealEstatePost($p->post_id,);
+        
+       $getRealEstate=$real->getRealEstatePost($p->$post_id);
        //print_r($getRealEstate);
        $getOwner=$user->getUserById($user_id);
        //print_r($getOwner);
@@ -68,6 +70,9 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
         break;
 
         case "job";
+        $getJobs=$job->getJobs($p->post_id);
+        //print_r($getJob); 
+        $getOwner=$user->getUserById($user_id);
         include("job_card.php");
         break;
 
@@ -82,8 +87,8 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
     ?>
 <?php endforeach?>
 
-<!--list the free posts-->
-<?php foreach($posts as $p):?>
+   <!--list the free posts-->
+   <?php foreach($posts as $p):?>
      
      <?php
        $user_id=$p->user_id;
@@ -100,14 +105,18 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
    
        switch($cat_name){
            case "realestate";
-          $getRealEstate=$real->getRealEstatePost($p->post_id,);
-          //print_r($getRealEstate);
+
+          $getRealEstate=$real->getRealEstatePost($p->post_id);
+          //print_r($getRealEstate); 
           $getOwner=$user->getUserById($user_id);
           //print_r($getOwner);
           include("realestate_card.php");
            break;
    
            case "job";
+           $getJobs=$job->getJobs($p->post_id);
+           //print_r($getJobs); 
+           $getOwner=$user->getUserById($user_id);
            include("job_card.php");
            break;
    
@@ -121,6 +130,8 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
        } //end of switch
        ?>
    <?php endforeach?>
+   <!--list the free posts-->
+  
    
     </div><!-- end of row -->
     

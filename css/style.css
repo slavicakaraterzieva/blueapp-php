@@ -292,7 +292,7 @@ body {
 .advertisement-address {
   position: absolute;
   margin-left: 0 auto;
-  top: 86%;
+  top: 88%;
   padding-top: 1rem;
   color: #616060;
   font-size: 1rem; }
@@ -366,6 +366,10 @@ body {
       border-bottom: 1px solid #3c664d; }
     .advertisement-details ul li:last-child {
       border-bottom: none; }
+      @media (max-width: 31.25em) {
+        .advertisement-details ul {
+          font-size: 1.3rem;
+        margin-top:-2rem} }
 
 .advertisement_cta {
   position: absolute;
@@ -379,13 +383,18 @@ body {
   font-size: 1.8rem;
   float: left;
   margin-left: 1rem; }
-
+  
 .advertisement .btn-text {
   font-size: 1.3rem;
   float: right;
   margin-right: 1rem;
-  margin-top: 0.5rem;
-  color: #f56b26; }
+  margin-top: 20%;
+  color: #ba265d;
+  cursor: pointer;
+ }
+ @media (max-width: 31.25em) {
+  .advertisement .btn-text {
+    margin-top: 25%; } }
 
 .advertisement_bottom-logo-estate {
   position: absolute;

@@ -11,6 +11,41 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-/blueapp.sql
 /config
 /texts
+/css/style.compiled.css
+/css/style.concatenated.css
+/css/styles.css
+/lib
+/node_modules
+/sass/abstracts
+/sass/base
+/sass/components
+/sass/layout
+/sass/pages
+/sass/src
+/sass/temes
+/sass/main.scss
+/sass/sass.bat
+/svg/demo-files
+/svg/fonts
+/svg/PNG
+/svg/SVG
+/svg/demo-external-svg.html
+/svg/demo.html
+/svg/Read Me.txt
+/svg/selection.json
+/svg/style.css
+/svg/svgxuse.js
+/svg/symbol-devs.svg
+/texts
+/test_login
+/main.css
+/main.css.map
+/new_key
+/new_key.pub
+/package-lock.json
+/package.json
+/spare.html
+/spare.php
+
