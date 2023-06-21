@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <?php?>
 <body>
     <script src="./sass/vendors/jquery3.5.0.js"></script>
@@ -251,5 +249,4 @@ else{echo'<li><a href="login.php">Login</a></li>';}
     </section>
   
     </header>
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
     <!-- end of header -->
