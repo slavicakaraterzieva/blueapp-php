@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <?php?>
  <!-- scroll button -->
  <div class="scroll">
@@ -192,5 +190,4 @@
 <!-- end of footer -->
 
 </body>
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
 </html>
