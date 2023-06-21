@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php?>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -161,8 +160,6 @@ else{echo'<li><a href="login.php">Login</a></li>';}
             <input type="text" id="searched_keyword_category" style="display:none;">
             <button type="button" class="search-box_button"><i class="fas fa-search search-box_btn-icon"></i></button>
         </div> 
-    </section>
-  
+      </section>
     </header>
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
     <!-- end of header -->
