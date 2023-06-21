@@ -1,3 +1,4 @@
+
 <?php
 require_once ('bootstrap.php');
 ?>
@@ -14,5 +15,6 @@ require_once ('bootstrap.php');
     <link rel="stylesheet" type="text/css" href="./sass/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./sass/vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+ 
     <title>The Blue App</title>
 </head>

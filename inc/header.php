@@ -1,12 +1,11 @@
 <?php?>
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="./sass/vendors/jquery3.5.0.js"></script>
-    <script src="./sass/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/menuClick.js"></script>
     <script src="./js/response.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/registerValidation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- header -->
     <header class="header">
         <div class="header_title-box">
@@ -27,7 +26,7 @@
     </div>
     <Img class="main-menu_logo-hidden" src="img/img-button.png" alt="button"/>
 
-      <input type="checkbox"  name="" id=button-menu class="hidden">
+      <input type="checkbox"  name="" id=button-menu class="hidden" placeholder="">
       <label for="button-menu" class="icon-menu">
       <i class="fas fa-bars bars"></i>
         <i class="fas fa-times times hidden"></i>
@@ -75,8 +74,8 @@ else{echo'<li><a href="login.php">Login</a></li>';}
         <div class="search-box_container">
             <input type="text" class="search-box_input" placeholder="Text">
             <input type="text" class="search-box_input search-box_input-right" placeholder="Keyword">
-            <input type="text" id="searched_keyword_category" style="display:none;">
-            <button type="button" class="search-box_button"><i class="fas fa-search search-box_btn-icon"></i></button>
+            <input type="text" id="searched_keyword_category" style="display:none;" placeholder="">
+            <button type="button" role="none" class="search-box_button"><i class="fas fa-search search-box_btn-icon"></i></button>
         </div> 
     </section>
   
