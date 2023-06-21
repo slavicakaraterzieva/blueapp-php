@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <?php
 class Job{
 private $db;
@@ -124,7 +123,7 @@ return $row;
 }
 //end of class Job
 //INSERT INTO `specific_sub` (`parent_sub_id`) SELECT parent_id FROM job_category;
-=======
+
 <?php
 class Job{
 private $db;
@@ -249,8 +248,7 @@ return $row;
 }
 //end of class Job
 //INSERT INTO `specific_sub` (`parent_sub_id`) SELECT parent_id FROM job_category;
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
-=======
+
 <?php
 class Job{
 private $db;
@@ -375,5 +373,5 @@ return $row;
 }
 //end of class Job
 //INSERT INTO `specific_sub` (`parent_sub_id`) SELECT parent_id FROM job_category;
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
+
 ?>
