@@ -1,4 +1,3 @@
-
 $(function() {
 
     //change the classes
