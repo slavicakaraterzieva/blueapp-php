@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <?php
 //echo "Loaded";
 require_once ('./config/config.php');
@@ -423,5 +421,4 @@ $paid_posts =$post->getPaidPosts($post_status,$post_type);
 </div><!-- end of container-fluid -->
 
    </section>
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
    <!-- end of main section -->
