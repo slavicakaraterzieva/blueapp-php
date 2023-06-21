@@ -1,4 +1,3 @@
- <?php?>
 <?php?>
  <!--the job card-->
           <div class="col-md-3 col-sm-1 col-sm-6 col-6 col-auto advertisement" id="advertisement"> 
