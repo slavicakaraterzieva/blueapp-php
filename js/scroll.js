@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 $(function() {
 
     //change the classes
@@ -117,5 +114,4 @@ $(document).ready(function(){
   $(".user-name").click(function(){
     $(".nav_user-link").toggle();
   });
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
 });
