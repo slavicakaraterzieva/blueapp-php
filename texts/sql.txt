@@ -1,9 +1,0 @@
-<!-- SELECT `post_type`, SUBSTRING(`post_type`,-3) FROM `posts`
-SELECT `post_price`,SUBSTRING(`post_price`,-3) FROM `payment_records` 
-UPDATE `payment_records` SET`post_calculated_price`=`post_price` WHERE `user_id`=`user_id`
-UPDATE `payment_records` SET `post_calculated_price`=SUBSTRING(`post_price`,-3)`
-SELECT * FROM `payment_records` Where `post_calculated_price`=0
-UPDATE `payment_records` SET`post_calculated_price`=SUBSTRING(`post_price`,-1) Where `post_calculated_price`=0
-INSERT INTO `payment_records`(`post_id`,`user_id`,`post_price`,`post_start_date`) 
-SELECT `post_id`,`user_id`,`post_type`,`created_at` FROM `posts` WHERE `post_id` NOT IN (SELECT `post_id` FROM `payment_records`)
--->
