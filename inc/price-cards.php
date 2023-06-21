@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<?php?>
-
 <?php?>
 <!DOCTYPE html>
 <html lang="eng">
@@ -410,5 +406,3 @@
 
 </body>
 </html>
-
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
