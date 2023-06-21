@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-     <?php?>
+<?php?>
  <!--the job card-->
           <div class="col-md-3 col-sm-1 col-sm-6 col-6 col-auto advertisement" id="advertisement"> 
             <div class="advertisement-side advertisement-side--front">
@@ -311,6 +309,4 @@
   </div><!--end of bottom logo-->
   
   </div><!--end of back side-->
-  
->>>>>>> 8909e8750af05f609e80253435cbd9efeec32e28
   </div><!-- end of job advertisement -->
